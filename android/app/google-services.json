@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81199305203",
+    "project_id": "car-wash-flutter-app",
+    "storage_bucket": "car-wash-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81199305203:android:48f9066ea43ecc6a47c286",
+        "android_client_info": {
+          "package_name": "com.abdelbaki.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81199305203-1o6ob0illi29jgn6v213h18i08o4oi7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNoyN0zluDsFRiAIb_BIybLjDbv05D_mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81199305203-1o6ob0illi29jgn6v213h18i08o4oi7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
