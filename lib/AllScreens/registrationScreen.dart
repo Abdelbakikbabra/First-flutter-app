@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:my_app/AllScreens/loginScreen.dart';
 import 'package:my_app/AllScreens/mainscreen.dart';
+import 'package:my_app/AllWidgets/progressDialog.dart';
 import 'package:my_app/main.dart';
 
 // ignore: must_be_immutable
@@ -176,8 +177,16 @@ class RegistraionScreen extends StatelessWidget {
 
   final FirebaseAuth _firebaseAuth=FirebaseAuth.instance;
 
-  registerNewUser(BuildContext context) async {
-    final User firebaseUser=(await _firebaseAuth.createUserWithEmailAndPassword(email: emailTextEditingController.text, password: passwordTextEditingController.text).catchError((errMsg){
+  void registerNewUser(BuildContext context) async {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context){
+          return ProgressDialog("Registration in progress , please wait...");
+        });
+    final User firebaseUser=(await _firebaseAuth.createUserWithEmailAndPassword(
+        email: emailTextEditingController.text, password: passwordTextEditingController.text).catchError((errMsg){
+      Navigator.pop(context);
       displayToastMessage("error"+errMsg.toString(), context);
     })).user;
 
@@ -198,6 +207,7 @@ class RegistraionScreen extends StatelessWidget {
       displayToastMessage("Your account has been created.", context);
       Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
     } else{
+      Navigator.pop(context);
       //error a weld khalti
       displayToastMessage("new user account not been created yet", context);
     }
