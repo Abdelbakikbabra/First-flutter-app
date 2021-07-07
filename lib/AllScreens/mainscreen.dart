@@ -196,11 +196,11 @@ class _MainScreenState extends State<MainScreen> {
                   children: [
                     SizedBox(height: 6.0),
                     Text(
-                      "Hi there",
+                      "Select your task doer :",
                       style: TextStyle(fontSize: 10.0),
                     ),
                     Text(
-                      "where to ?",
+                      "where do you want the work done ?",
                       style:
                           TextStyle(fontSize: 20.0, fontFamily: "Brand-Bold"),
                     ),
